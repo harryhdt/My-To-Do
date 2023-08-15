@@ -1,11 +1,11 @@
 # My To Do
 
-<div style="text-align:center">
+<p align="center">
 <img src="static/pwa-192x192.png" style="width:120px;" />
-
+</p>
+<p align="center">
 is a Simple To Do App, with support cross platform Web (PWA), Android, & IOS (Coming Soon)
-
-</div>
+</p>
 
 ### Add PWA platform
 
