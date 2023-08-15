@@ -16,7 +16,7 @@
 		id: number;
 		checked: boolean;
 		text: string;
-		created_at: string;
+		created_at: number;
 	}[] = JSON.parse(
 		localStorage.getItem('tasks') ??
 			JSON.stringify([
@@ -24,7 +24,7 @@
 					id: new Date().getTime(),
 					checked: false,
 					text: 'To DO',
-					created_at: new Date().toLocaleDateString()
+					created_at: new Date().getTime()
 				}
 			])
 	);
@@ -35,7 +35,7 @@
 			id,
 			checked: false,
 			text: 'To DO',
-			created_at: new Date().toLocaleDateString()
+			created_at: new Date().getTime()
 		};
 		setTimeout(() => {
 			const spanElement = document.querySelector(`#text-${id}`) as HTMLSpanElement;
@@ -92,6 +92,7 @@
 					title="Author"
 					link
 					href="https://harryhdt.dev"
+					target="_blank"
 					onClick={() => {
 						// location.href = 'https://harryhdt.dev';
 						popoverOpened = false;
@@ -102,7 +103,7 @@
 
 		<div class="p-4 space-y-3">
 			<List strong outline inset margin="!m-0" padding="!p-0">
-				{#each tasks.sort( (a, b) => (a.checked === b.checked ? new Date(b.created_at).getTime() - new Date(a.created_at).getTime() : a.checked ? -1 : 1) ) as data (data.id)}
+				{#each tasks.sort( (a, b) => (a.checked === b.checked ? a.created_at - b.created_at : a.checked ? -1 : 1) ) as data (data.id)}
 					<ListItem label>
 						<Checkbox
 							slot="media"

@@ -79,20 +79,17 @@
 	});
 
 	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : '';
+	$: themeColor = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#0e0e0e' : '#f7f7f8';
 </script>
 
 <svelte:head>
 	{#if !Capacitor.isNativePlatform()}
 		{@html webManifest}
-		<meta
-			name="theme-color"
-			content={window.matchMedia('(prefers-color-scheme: dark)').matches ? '#0e0e0e' : '#f7f7f8'}
-		/>
+		<meta name="theme-color" content={themeColor} />
 	{/if}
 </svelte:head>
 
 <App theme="ios" safeAreas>
-	<div class="bg-ios-" />
 	<PageTransitionController transition={ios}>
 		<slot />
 	</PageTransitionController>

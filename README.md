@@ -6,6 +6,9 @@
 <p align="center">
 is a Simple To Do App, with support cross platform Web (PWA), Android, & IOS (Coming Soon)
 </p>
+<p align="center">
+    <a href="My To Do.apk" download>Download APK</a>
+</p>
 
 ### Add PWA platform
 

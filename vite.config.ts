@@ -4,6 +4,10 @@ import { defineConfig } from 'vite';
 
 const PWAOptions: SvelteKitPWAOptions = {
 	manifest: {
+		name: 'My To Do',
+		short_name: 'My To Do',
+		description:
+			'is a Simple To Do App, with support cross platform Web (PWA), Android, & IOS (Coming Soon) ',
 		theme_color: '#0e0e0e',
 		icons: [
 			{
